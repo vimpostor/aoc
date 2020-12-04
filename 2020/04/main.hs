@@ -30,7 +30,7 @@ validparam "ecl" p = let l = ["amb", "blu", "brn", "gry", "grn", "hzl", "oth"]
                      in elem p l
 validparam "pid" p = length p == 9 && all isDigit p
 validparam "cid" _ = True
-validparam _ _ = False
+validparam _ _    = False
 
 main = do
     contents <- readFile "input.txt"
