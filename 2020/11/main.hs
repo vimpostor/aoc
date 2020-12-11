@@ -1,8 +1,5 @@
 import Data.List
 
-occupied :: [String] -> Int -> Int -> Bool
-occupied l x y = (l!!y)!!x == '#'
-
 row :: [String] -> Int -> String
 row l y = foldl (++) [] $ reverse $ drop (length l - y - 1) $ reverse $ drop y l
 
