@@ -58,9 +58,9 @@ numocc l = sum $ map (\x -> fromEnum (x == '#')) (concat l)
 
 fixpoint :: [String] -> ([String] -> Int -> Int -> Char) -> [String]
 fixpoint l t = let n = iter l t
-             in case () of
-               () | n == l -> l
-               () | otherwise -> fixpoint n t
+               in case () of
+                 () | n == l -> l
+                 () | otherwise -> fixpoint n t
 
 main = do
     contents <- readFile "input.txt"
