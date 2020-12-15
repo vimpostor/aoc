@@ -1,5 +1,5 @@
 import Data.List
-import Data.Map (Map,insert,lookup,fromList,map)
+import Data.Map (Map,insert,lookup,fromList)
 
 parse :: String -> [Int]
 parse x = Data.List.map (read . dropWhile (','==)) (groupBy (\a b -> b /= ',') x)
