@@ -10,7 +10,7 @@ riscv64-elf-gcc main.o -o main
 ```
 
 You can then either run the ELF binary directly on RISC-V hardware or cheat like me and run it in a RISC-V simulator.
-I personally use [spike](https://github.com/riscv-software-src/riscv-isa-sim), but you can also use [tinyemu](https://bellard.org/tinyemu/) alternatively.
+I personally use [spike](https://github.com/riscv-software-src/riscv-isa-sim), but you can also use [tinyemu](https://bellard.org/tinyemu/).
 
 ```bash
 spike /usr/riscv64-linux-gnu/bin/pk main
