@@ -30,3 +30,6 @@ cabal.project.local~
 
 main
 a.out
+build/
+.cache/
+compile_commands.json
