@@ -9,3 +9,4 @@ Here is the complete list of used programming languages, starting with the lette
 - 01 - [Assembly (RISC-V ISA)](https://github.com/riscv/riscv-isa-manual)
 - 02 - [Bash](https://www.gnu.org/software/bash/)
 - 03 - [C++](https://www.cplusplus.com/)
+- 04 - [Dart](https://dart.dev/)
