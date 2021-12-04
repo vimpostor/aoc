@@ -20,13 +20,12 @@ bool bit_precedence(const std::vector<std::string>& b, const size_t i) {
 }
 
 std::vector<std::string> filter(const std::vector<std::string>& a, const size_t i, const bool invert = false) {
-	std::vector<std::string> result;
-	if (a.size() > 1) {
-		const bool g = bit_precedence(a, i) ^ invert;
-		std::copy_if(a.begin(), a.end(), std::back_inserter(result), [&](auto s){ return s[i] == (g ? '1' : '0'); });
-	} else {
-		result = a;
+	if (a.size() <= 1) {
+		return a;
 	}
+	std::vector<std::string> result;
+	const bool g = bit_precedence(a, i) ^ invert;
+	std::copy_if(a.begin(), a.end(), std::back_inserter(result), [&](auto s){ return s[i] == (g ? '1' : '0'); });
 	return result;
 }
 
@@ -62,6 +61,4 @@ int main()
 	// part 2
 	const auto life_support = bin_to_dec(oxygen.front()) * bin_to_dec(co_2.front());
 	std::cout << life_support << std::endl;
-
-	return EXIT_SUCCESS;
 }
