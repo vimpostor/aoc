@@ -10,3 +10,4 @@ Here is the complete list of used programming languages, starting with the lette
 - 02 - [Bash](https://www.gnu.org/software/bash/)
 - 03 - [C++](https://www.cplusplus.com/)
 - 04 - [Dart](https://dart.dev/)
+- 05 - [Elixir](https://elixir-lang.org/)
