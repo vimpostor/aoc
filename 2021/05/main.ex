@@ -12,11 +12,11 @@ defmodule Aoc do
 	end
 
 	def danger(points) do
-		uniq(points -- uniq(points)) |> length
+		points -- uniq(points) |> uniq() |> length
 	end
 end
 
-lines = "input.txt" |> File.read!() |> String.split("\n") |> map(fn s -> Enum.map(String.split(s, ~r([^\d]+), trim: true), &String.to_integer/1) end)
+lines = File.read!("input.txt") |> String.split("\n") |> map(fn s -> Enum.map(String.split(s, ~r([^\d]+), trim: true), &String.to_integer/1) end)
 
 # part 1
 lines |> Enum.flat_map(&Aoc.rasterize/1) |> Aoc.danger() |> IO.inspect()
