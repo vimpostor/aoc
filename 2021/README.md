@@ -12,3 +12,4 @@ Here is the complete list of used programming languages, starting with the lette
 - 04 - [Dart](https://dart.dev/)
 - 05 - [Elixir](https://elixir-lang.org/)
 - 06 - [Fortran](https://fortran-lang.org/)
+- 07 - [Go](https://go.dev/)
