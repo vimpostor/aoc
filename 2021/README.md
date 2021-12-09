@@ -13,3 +13,4 @@ Here is the complete list of used programming languages, starting with the lette
 - 05 - [Elixir](https://elixir-lang.org/)
 - 06 - [Fortran](https://fortran-lang.org/)
 - 07 - [Go](https://go.dev/)
+- 08 - [Haskell](https://www.haskell.org/)
