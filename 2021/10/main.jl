@@ -6,12 +6,10 @@ function parse(line::String)
 		i = findfirst(a -> a == c, [getfield.(braces, 1); getfield.(braces, 2)])
 		if (i < 5)
 			push!(stack, i)
+		elseif last(stack) == i-4
+			pop!(stack)
 		else
-			if last(stack) == i-4
-				pop!(stack)
-			else
-				return braces[i-4][3]
-			end
+			return braces[i-4][3]
 		end
 	end
 	return -foldl((a,b) -> 5*a + b, reverse(stack))
