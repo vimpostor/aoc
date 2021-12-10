@@ -1,6 +1,5 @@
-braces = [('(',')',3),('[',']',57),('{','}',1197),('<','>',25137)]
-
 function parse(line::String)
+	braces = [('(',')',3),('[',']',57),('{','}',1197),('<','>',25137)]
 	stack = []
 	for c in line
 		i = findfirst(a -> a == c, [getfield.(braces, 1); getfield.(braces, 2)])
