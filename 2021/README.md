@@ -16,3 +16,4 @@ Here is the complete list of used programming languages, starting with the lette
 08. [Haskell](https://www.haskell.org/)
 09. [Idris](https://www.idris-lang.org/)
 10. [Julia](https://julialang.org/)
+11. [Kotlin](https://kotlinlang.org/)

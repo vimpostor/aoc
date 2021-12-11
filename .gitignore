@@ -34,3 +34,4 @@ build/
 .cache/
 compile_commands.json
 main.ibc
+main.jar
