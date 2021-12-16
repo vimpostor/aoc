@@ -8,7 +8,7 @@ import tables
 
 # parse
 let content = "input.txt".readFile.strip.split('\n')
-var templ = content[0]
+let templ = content[0]
 let it = toSeq 0..templ.len - 2
 let rs = content[2..^1].map(x => x.split(' ')).map(x => (x[0], x[2]))
 let rules = newTable(rs)
