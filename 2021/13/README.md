@@ -5,6 +5,6 @@ Then create a database for AoC so that you don't disrupt any production deployme
 
 ```bash
 mysql -e 'CREATE DATABASE IF NOT EXISTS aoc; CREATE USER IF NOT EXISTS aoc@localhost; GRANT ALL PRIVILEGES ON aoc.* TO aoc@localhost' # Create database
-mysql aoc < main.sql # Run query
+mysql aoc < my.sql # Run query
 mysql -e 'DROP DATABASE aoc; DROP USER aoc@localhost' # Cleanup
 ```

@@ -1,3 +1,15 @@
+-- MySQL is absolutely cursed, seriously don't try this at home, this was a pain to write.
+-- Here are some of the highlights:
+-- WTF MYSQL WHEN I CREATE A PROCEDURE I HAVE TO USE ANOTHER DELIMITER THAN ; BECAUSE MYSQL WOULD TERMINATE THE ENTIRE PROCEDURE ON THE FIRST ;
+-- This is why I change the delimiter to // before the procedure begins, then I can use ; inside the procedure. After the procedure I have to change the delimiter back to ; 🦀🦀🦀
+-- You can't declare MySQL variables outside of a procedure, which is why I had to use a procedure in the first place
+-- You can declare local variables only at the start of the procedure, every other place threw syntax errors on me
+-- Oh right, syntax errors, I almost forgot about that painful part. MYSQL DOESN'T EVEN TELL YOU WHAT THE SYNTAX ERROR IS, "You have AN eRrOr In youR SQL SyNtAx; ChECK THE MaNuAl thAT CORreSPONdS to yoUR mARiAdb Server vErsioN FOR tHE RIght synTaX TO usE", are you fucking serious???
+-- But hey, at least MySQL tells you the line where the syntax error is, right? Wrong! Sometimes (especially when working inside procedures), the given line number is completely wrong.
+-- I once literally had to do binary search for my syntax error linenumber, by commenting out half of my code.
+-- The whole serializing the (x,y) array to an ASCII art string was pain.
+-- I was unable to get MariaDB to print out \n as linebreaks, so instead I wrote each line of the string into a separate row of a table and printed out the table in table form, which will print a linebreak on its own for each row.
+
 -- parsing
 CREATE TABLE IF NOT EXISTS dots (x int, y int, CONSTRAINT UNIQUE (x, y));
 LOAD DATA LOCAL INFILE 'input.txt' into table dots fields terminated by ',' (x,y);
