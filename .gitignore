@@ -35,3 +35,5 @@ build/
 compile_commands.json
 main.ibc
 main.jar
+main.cmi
+main.cmx
