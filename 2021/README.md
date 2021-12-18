@@ -21,3 +21,4 @@ Here is the complete list of used programming languages, starting with the lette
 13. [MySQL](13/my.sql)
 14. [Nim](14/main.nim)
 15. [OCaml](15/main.ml)
+16. [Python](16/main.py)
