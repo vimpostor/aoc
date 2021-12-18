@@ -1,6 +1,6 @@
 # Bash
 
-Today I am using Bash. You can run the script as follows:
+Today I am using [Bash](https://www.gnu.org/software/bash/). You can run the script as follows:
 
 ```bash
 ./main.sh input.txt

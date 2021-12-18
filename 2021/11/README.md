@@ -1,6 +1,6 @@
 # Kotlin
 
-Download Kotlin and run as follows:
+Download [Kotlin](https://kotlinlang.org/) and run as follows:
 
 ```bash
 kotlinc main.kt -include-runtime -d main.jar

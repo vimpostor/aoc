@@ -1,6 +1,6 @@
 # Nim
 
-Download Nim and run as follows:
+Download [Nim](https://nim-lang.org/) and run as follows:
 
 ```bash
 nim r main.nim

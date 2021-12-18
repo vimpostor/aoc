@@ -1,6 +1,6 @@
 # OCaml
 
-Download OCaml and run as follows:
+Download [OCaml](https://ocaml.org/) and run as follows:
 
 ```bash
 ocamlopt main.ml -o main

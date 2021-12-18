@@ -1,6 +1,6 @@
 # MySQL (MariaDB)
 
-First install a MySQL compatible database, I recommend the opensource [MariaDB](https://mariadb.org/) implementation.
+First install a [MySQL](https://www.mysql.com/) compatible database, I recommend the opensource [MariaDB](https://mariadb.org/) implementation.
 Then create a database for AoC so that you don't disrupt any production deployments with my cursed Advent of Code SQL query, and finally run it as follows:
 
 ```bash

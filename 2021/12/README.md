@@ -1,6 +1,6 @@
 # Lua
 
-Download Lua and run as follows:
+Download [Lua](https://www.lua.org/) and run as follows:
 
 ```bash
 lua main.lua

@@ -1,6 +1,6 @@
 # C++
 
-Today I am using C++. To compile, use the cmake build system:
+Today I am using [C++](https://www.cplusplus.com/). To compile, use the cmake build system:
 
 ```bash
 cmake -B build

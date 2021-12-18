@@ -1,6 +1,6 @@
 # Assembly
 
-Today I am using **Assembly** (RISC-V ISA).
+Today I am using **Assembly** ([RISC-V ISA](https://github.com/riscv/riscv-isa-manual)).
 
 To assemble, use:
 
