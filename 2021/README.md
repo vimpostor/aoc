@@ -23,3 +23,4 @@ Here is the complete list of used programming languages, starting with the lette
 15. [OCaml](15/main.ml)
 16. [Python](16/main.py)
 17. [QML](17/main.qml)
+18. [Rust](18/src/main.rs)
