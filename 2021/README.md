@@ -25,3 +25,4 @@ Here is the complete list of used programming languages, starting with the lette
 17. [QML](17/main.qml)
 18. [Rust](18/src/main.rs)
 19. [Scheme](19/main.scm)
+20. [Typescript](20/main.ts)
