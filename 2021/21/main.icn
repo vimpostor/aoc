@@ -1,0 +1,68 @@
+# This language may look like a shitposting language at first glance, but is designed surprisingly well given its age (well that is besides letting indices start at 1)
+# It even provides syntax definitions for the world's best editor: http://btiffin.users.sourceforge.net/up/tools.html#vim
+# Also the documentation is really excellent
+
+procedure uuid(p, s)
+	return p[1] + p[2] * 10 + s[1] * 100 + s[2] * 2000
+end
+
+procedure count(positions, scores)
+	static cache
+	/cache := table()
+
+	if max(scores) > 20 then {
+		res := [1, 0]
+		if scores[2] > 20 then res := reverse(res)
+		return res
+	}
+
+	k := uuid(positions, scores)
+	if member(cache,k) then return cache[k]
+
+	res := [0, 0]
+	every a := 1 to 3 do {
+		every b := 1 to 3 do {
+			every c := 1 to 3 do {
+				position := (positions[1] + a + b + c) % 10
+				counts := count([positions[2], position], [scores[2], scores[1] + position + 1])
+				res[1] := res[1] + counts[2]
+				res[2] := res[2] + counts[1]
+			}
+		}
+	}
+	cache[k] := res
+	return res
+end
+
+procedure main()
+	# parsing
+	f := open("input.txt")
+	scores := list(2, 0)
+	players := list(2, 0)
+	every i := 1 to 2 do {
+		players[i] := integer(read(f)[-1]) - 1
+	}
+	close(f)
+
+	# part 2, we compute this first so that we don't need to copy the initial values
+	part2 := count(players, scores)
+
+	# part 1
+	last_dice := 0
+	current_player := 1
+	dices_rolled := 0
+	while max(scores) < 1000 do {
+		sum := 0
+		every d := 0 to 2 do {
+			last_dice := (last_dice + 1) % 100
+			sum := sum + last_dice
+		}
+		dices_rolled := dices_rolled + 3
+		players[current_player] := (players[current_player] + sum) % 10
+		scores[current_player] := scores[current_player] + players[current_player] + 1
+		current_player := (current_player % 2) + 1
+	}
+
+	write(min(scores) * dices_rolled)
+	write(max(part2))
+end
