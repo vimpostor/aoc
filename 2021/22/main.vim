@@ -1,9 +1,5 @@
 vim9script
 
-set t_ti=
-set t_te=
-set nomore
-
 def Parse(l: string): dict<number>
 	var res = {on: match(l[1], 'n') + 1}
 	for d in "xyz"->split('\zs')
@@ -69,10 +65,10 @@ def Reboot(lines: list<dict<number>>, limit: bool): number
 	return res
 enddef
 
-const lines = readfile("input.txt")->mapnew((_, v) => Parse(v))
+const cuboids = readfile("input.txt")->mapnew((_, v) => Parse(v))
 # part 1
-echoc Reboot(lines, true)
+echom Reboot(cuboids, true)
 # part 2
-echoc Reboot(lines, false)
+echom Reboot(cuboids, false)
 
 qa!

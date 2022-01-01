@@ -1,0 +1,6 @@
+" do not clear screen on exit
+set t_ti=
+set t_te=
+
+" do not show Press ENTER to continue prompts
+set nomore
