@@ -1,6 +1,6 @@
 # Vim script
 
-Download vim and run as follows:
+Download [vim](https://www.vim.org/) and run as follows:
 
 ```bash
 vim -u vimrc --not-a-term -S main.vim
