@@ -77,8 +77,16 @@
 (define (searchd bs rots dirs truthdelta)
   (if (null? rots) '() (append (searchr bs (car rots) dirs truthdelta) (searchd bs (cdr rots) dirs truthdelta))))
 
+(define (searcht unmatched truthdeltas rots dirs)
+  (if (null? truthdeltas)
+	'()
+	(let ((res (filter car (searchd (car unmatched) rots dirs (car truthdeltas)))))
+	  (if (null? res)
+		(searcht unmatched (cdr truthdeltas) rots dirs)
+		res))))
+
 (define (search unmatched truthdeltas rots dirs)
-  (let ((f (flatten (map (lambda (truthdelta) (filter car (searchd (car unmatched) rots dirs truthdelta))) truthdeltas))))
+  (let ((f (searcht unmatched truthdeltas rots dirs)))
 	(if (null? f)
 	  (search (cdr unmatched) truthdeltas rots dirs)
 	  (cons (car unmatched) (cdr (car f))))))
