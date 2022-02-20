@@ -28,3 +28,4 @@ Here is the complete list of used programming languages, starting with the lette
 20. [Typescript](20/main.ts)
 21. [Unicon](21/main.icn)
 22. [Vim script](22/main.vim)
+23. [With pen and paper](23/main.txt)
