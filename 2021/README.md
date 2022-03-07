@@ -30,3 +30,11 @@ Here is the complete list of used programming languages, starting with the lette
 22. [Vim script](22/main.vim)
 23. [With pen and paper](23/main.txt)
 24. [xHarbour](24/main.prg)
+25. [Zig](25/main.zig)
+
+You may notice that I skipped the letter `Y`. This is because there are only **25 days**, but **26 letters**.
+As it was incredible hard to find a programming language for that letter, I skipped it and used one starting with **Z** for the last day.
+After all, this challenge was already hard enough.
+
+In the end it was quite interesting to get to learn the similarities and differences in so many programming languages.
+Let's hope for my own health, that next year I don't come up with an even crazier challenge...
