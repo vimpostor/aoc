@@ -4,5 +4,6 @@ This repo contains my personal [Advent of Code](https://adventofcode.com/) solut
 
 - [2020](https://adventofcode.com/2020): Implemented entirely in Haskell
 - [2021](https://adventofcode.com/2021): Implemented in a different language each day for a total of 25 programming languages
+- [2022](https://adventofcode.com/2022): Implemented entirely in Nix
 
 Go check out the README of a particular year for more info.
