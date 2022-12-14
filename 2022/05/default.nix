@@ -2,8 +2,14 @@ with (import <nixpkgs/lib>);
 with (import ../lib);
 let
 	parts = trimLines (splitString "\n\n" (readFile ./input.txt));
-	stackPart = map (l: dropWhile (x: x == " ") (init l)) (filter (l: null != builtins.match ".*[[:digit:]]" (toString l)) (transpose (map stringToCharacters (read (head parts)))));
-	parsed = map (l: let r = builtins.match ".* ([[:digit:]]+) .* ([[:digit:]]+) .* ([[:digit:]]+)" l; in [(toInt (head r))] ++ (map (x: toInt x - 1) (tail r))) (read (elemAt parts 1));
+	stackPart = map (l: dropWhile (x: x == " ") (init l)) (filter
+		(l: null != builtins.match ".*[[:digit:]]" (toString l))
+		(transpose (map stringToCharacters (read (head parts)))));
+	parsed = map (l:
+		let
+			r = builtins.match ".* ([[:digit:]]+) .* ([[:digit:]]+) .* ([[:digit:]]+)" l;
+		in
+			[(toInt (head r))] ++ (map (x: toInt x - 1) (tail r))) (read (elemAt parts 1));
 	move = l: o: c:
 		let
 			n = head o;
