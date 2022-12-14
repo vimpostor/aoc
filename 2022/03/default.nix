@@ -1,7 +1,7 @@
 with (import <nixpkgs/lib>);
 with (import ../lib);
 let
-	lines = map stringToCharacters (trimLines (splitString "\n" (readFile ./input.txt)));
+	lines = map stringToCharacters (read (readFile ./input.txt));
 	score = c: let s = strings.charToInt c; in if s < 91 then s - 38 else s - 96;
 	split = c:
 		let

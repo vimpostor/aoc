@@ -1,7 +1,7 @@
 with (import <nixpkgs/lib>);
 with (import ../lib);
 let
-	lines = trimLines (splitString "\n" (readFile ./input.txt));
+	lines = read (readFile ./input.txt);
 	# 0 = rock, 1 = paper, 2 = scissors
 	parseme = s: strings.charToInt (charAt 2 s) - 88;
 	parseother = s: strings.charToInt (charAt 0 s) - 65;
