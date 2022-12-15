@@ -18,7 +18,7 @@ let
 			m = elemAt l from;
 		in
 			setAt (setAt l from (drop n m)) to (c (take n m) ++ elemAt l to);
-	work = s: l: c: if empty l then s else work (move s (head l) c) (drop 1 l) c;
+	work = s: l: c: if empty l then s else work (move s (head l) c) (forward l) c;
 	top = c: charsToString (foldl' (l: n: l ++ [(head n)]) [] (work stackPart parsed c));
 	part1 = top reverseList;
 	part2 = top (x: x);
