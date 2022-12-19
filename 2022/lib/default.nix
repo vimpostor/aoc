@@ -12,6 +12,7 @@ rec {
 	shiftr = l: [(head (reverseList l))] ++ (reverseList (forward (reverseList l)));
 	sortasc = sort (a: b: a < b);
 	sortdec = sort (a: b: a > b);
+	suffixFrom = i: s: substring i (stringLength s) s;
 	sum = foldl' (l: n: l + n) 0;
 	transpose = l: [(map head l)] ++ (if length (head l) > 1 then transpose (map (l: forward l) l) else []);
 	trimLines = l: filter (s: stringLength s > 0) l;
