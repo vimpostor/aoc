@@ -3,7 +3,6 @@ with (import ../lib);
 let
 	lines = read (readFile ./input.txt);
 	parsed = concatMap (s: genList (x: { R = [1 0]; U = [0 1]; L = [(-1) 0]; D = [0 (-1)]; }.${substring 0 1 s}) (toInt (suffixFrom 2 s))) lines;
-	rope = n: genList (x: [0 0]) n;
 	follow = h: t:
 		let
 			d = subTuples h t;
@@ -17,7 +16,7 @@ let
 			s = noperope (addTuples (head r) (head p)) (forward r);
 		in
 			go (forward p) ((v ++ [(last s)])) s;
-	dangernoodle = n: length (unique (go parsed [] (rope n)));
+	dangernoodle = n: length (unique (go parsed [] (genList (x: [0 0]) n)));
 	part1 = dangernoodle 2;
 	part2 = dangernoodle 10;
 in {
