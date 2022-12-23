@@ -1,7 +1,10 @@
 with (import <nixpkgs/lib>);
 rec {
+	abs = x: if x < 0 then (-x) else x;
+	addTuples = a: b: zipListsWith (x: y: x + y) a b;
 	charAt = i: s: substring i 1 s;
 	charsToString = l: concatStringsSep "" l;
+	contains = x: l: any (i: i == x) l;
 	dropWhile = f: l: if f (head l) then dropWhile f (forward l) else l;
 	empty = l: length l == 0;
 	findIndex = e: l: if empty l then 1 else if head l == e then 0 else 1 + findIndex e (forward l);
@@ -15,6 +18,7 @@ rec {
 	shiftr = l: [(head (reverseList l))] ++ (reverseList (forward (reverseList l)));
 	sortasc = sort (a: b: a < b);
 	sortdec = sort (a: b: a > b);
+	subTuples = a: b: zipListsWith (x: y: x - y) a b;
 	suffixFrom = i: s: substring i (stringLength s) s;
 	sum = foldl' (l: n: l + n) 0;
 	takeWhile = f: l: if empty l then [] else (if f (head l) then [(head l)] ++ takeWhile f (forward l) else []);
