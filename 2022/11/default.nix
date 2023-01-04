@@ -27,7 +27,7 @@ let
 	inspect = m: i: d:  if i >= length m then m else
 		let
 			c = elemAt m i;
-			h = map (i: mod ((c.op i) / d) (foldl' (l: n: l * n.d) 1 m)) c.hold;
+			h = map (i: mod (c.op i / d) (foldl' (l: n: l * n.d) 1 m)) c.hold;
 			t = map c.to h;
 			n = c // { hold = []; n = c.n + length h; };
 		in

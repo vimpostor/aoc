@@ -7,8 +7,11 @@ rec {
 	contains = x: l: any (i: i == x) l;
 	dropWhile = f: l: if f (head l) then dropWhile f (forward l) else l;
 	empty = l: length l == 0;
-	findIndex = e: l: if empty l then 1 else if head l == e then 0 else 1 + findIndex e (forward l);
+	findIndex = e: l: if empty l then infty else if head l == e then 0 else 1 + findIndex e (forward l);
 	forward = drop 1;
+	gridAt = g: x: y: elemAt (elemAt g y) x;
+	gridSetAt = g: x: y: c: setAt g y (setAt (elemAt g y) x c);
+	infty = 1073741823;
 	iter = f: n: if n == 0 then x: x else x: (iter f (n - 1)) (f x);
 	min = l: head (sortasc l);
 	max = l: head (sortdec l);
