@@ -1,5 +1,6 @@
 with (import <nixpkgs/lib>);
 rec {
+	autorange = x: y: let r = range x y; in if x < y then r else reverseList r;
 	abs = x: if x < 0 then (-x) else x;
 	addTuples = a: b: zipListsWith (x: y: x + y) a b;
 	charAt = i: s: substring i 1 s;
@@ -13,6 +14,7 @@ rec {
 	gridSetAt = g: x: y: c: setAt g y (setAt (elemAt g y) x c);
 	infty = 1073741823;
 	iter = f: n: if n == 0 then x: x else x: (iter f (n - 1)) (f x);
+	manhattan = a: b: x: y: abs (x - a) + abs (y - b);
 	min = l: head (sortasc l);
 	max = l: head (sortdec l);
 	product = foldl' (l: n: l * n) 1;
