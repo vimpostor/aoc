@@ -13,10 +13,12 @@ rec {
 	gridAt = g: x: y: elemAt (elemAt g y) x;
 	gridSetAt = g: x: y: c: setAt g y (setAt (elemAt g y) x c);
 	infty = 1073741823;
+	indexWhere = f: l: if empty l then infty else if f (head l) then 0 else 1 + indexWhere f (forward l);
 	iter = f: n: if n == 0 then x: x else x: (iter f (n - 1)) (f x);
 	manhattan = a: b: x: y: abs (x - a) + abs (y - b);
-	min = l: head (sortasc l);
-	max = l: head (sortdec l);
+	min = l: if empty l then 0 else head (sortasc l);
+	max = l: if empty l then 0 else head (sortdec l);
+	pow = a: b: if b == 0 then 1 else a * pow a (b - 1);
 	product = foldl' (l: n: l * n) 1;
 	read = i: trimLines (splitString "\n" i);
 	setAt = l: i: x: (take i l) ++ [x] ++ (drop (i + 1) l);
