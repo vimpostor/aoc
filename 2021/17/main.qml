@@ -3,11 +3,16 @@ import QtQuick.Controls
 import QtQuick.Controls.Material
 
 ApplicationWindow {
-	property string content: ""
 	visible: true
 	width: 485
 	height: 300
 	Material.theme: Material.System
+	TextEdit {
+		visible: false
+		id: input
+		textDocument.source: "input.txt"
+		Component.onCompleted: solve();
+	}
 	function step(arr) {
 		arr.forEach(function(p, i) {
 			var item = arr[i];
@@ -20,7 +25,7 @@ ApplicationWindow {
 	}
 	function solve() {
 		// parsing
-		const ax = content.split(',');
+		const ax = input.text.split(',');
 		const xmin = Number(ax[0].split("..")[0].split('=')[1]);
 		const xmax = Number(ax[0].split("..")[1]);
 		const ymin = Number(ax[1].split("..")[0].split('=')[1]);
@@ -49,23 +54,5 @@ ApplicationWindow {
 		}
 		console.log(solutions.length);
 
-	}
-	Timer {
-		id: solveTimer
-		interval: 50
-		onTriggered: solve();
-	}
-	Component.onCompleted: {
-		// read file
-		var xhr = new XMLHttpRequest;
-		xhr.open("GET", "input.txt");
-		xhr.onreadystatechange = function() {
-			var resp = xhr.responseText;
-			content = resp.split('\n')[0];
-		}
-		xhr.send();
-	}
-	onContentChanged: {
-		solveTimer.start();
 	}
 }
